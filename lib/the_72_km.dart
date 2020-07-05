@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sy_expedition/home_view.dart';
 import 'package:sy_expedition/page_offset_notifier.dart';
 
 class The72km extends StatelessWidget {
@@ -10,7 +11,7 @@ class The72km extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: MediaQuery.of(context).size.height * .10125,
+      bottom: HomeView.data.size.height * .10125,
       child: Consumer<PageOffsetNotifier>(
         builder: (_, PageOffsetNotifier value, Widget child) {
           return Opacity(

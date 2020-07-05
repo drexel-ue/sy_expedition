@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sy_expedition/color_constants.dart';
+import 'package:sy_expedition/home_view.dart';
 import 'package:sy_expedition/page_offset_notifier.dart';
 
 class PageIndicator extends StatelessWidget {
@@ -8,7 +9,7 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = HomeView.data.size;
 
     return Positioned(
       bottom: size.height * .01 + size.width * .025,

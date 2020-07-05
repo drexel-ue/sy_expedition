@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sy_expedition/asset_constants.dart';
+import 'package:sy_expedition/home_view.dart';
 import 'package:sy_expedition/page_offset_notifier.dart';
 
 class Vulture extends StatelessWidget {
@@ -8,7 +9,7 @@ class Vulture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    final width = HomeView.data.size.width;
 
     return Consumer<PageOffsetNotifier>(
       builder: (BuildContext context, PageOffsetNotifier value, Widget child) {

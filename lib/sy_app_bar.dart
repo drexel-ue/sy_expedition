@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sy_expedition/color_constants.dart';
+import 'package:sy_expedition/home_view.dart';
 
 class SyAppBar extends StatelessWidget {
   const SyAppBar({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = HomeView.data.size;
     final width = size.width;
     final height = size.height;
 

@@ -12,6 +12,8 @@ import 'package:sy_expedition/the_72_km.dart';
 import 'package:sy_expedition/vulture.dart';
 
 class HomeView extends StatefulWidget {
+  static MediaQueryData data;
+
   HomeView({Key key}) : super(key: key);
 
   @override
@@ -25,6 +27,12 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     _pageController = PageController();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    HomeView.data = MediaQuery.of(context);
   }
 
   @override

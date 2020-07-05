@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sy_expedition/color_constants.dart';
+import 'package:sy_expedition/home_view.dart';
 import 'package:sy_expedition/page_offset_notifier.dart';
 
 class Page2 extends StatelessWidget {
@@ -10,7 +11,7 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = HomeView.data.size;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: size.width * .1),
@@ -35,7 +36,7 @@ class _HolyGlow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = HomeView.data.size;
 
     return Consumer<PageOffsetNotifier>(
       builder: (_, PageOffsetNotifier value, __) {
@@ -69,7 +70,7 @@ class _TravelDetails extends StatelessWidget {
     return Consumer<PageOffsetNotifier>(
       builder: (BuildContext context, PageOffsetNotifier value, Widget child) {
         return Transform.translate(
-          offset: Offset(MediaQuery.of(context).size.width * .8 * (1 - value.page), 0),
+          offset: Offset(HomeView.data.size.width * .8 * (1 - value.page), 0),
           child: Opacity(
             opacity: math.max<double>(0, 4 * value.page - 3),
             child: child,
@@ -93,7 +94,7 @@ class _StartCampBaseCampRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    final width = HomeView.data.size.width;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: width * .07),
@@ -103,7 +104,7 @@ class _StartCampBaseCampRow extends StatelessWidget {
           Consumer<PageOffsetNotifier>(
             builder: (_, PageOffsetNotifier value, Widget child) {
               return Transform.translate(
-                offset: Offset(-MediaQuery.of(context).size.width * 2 * (1 - value.page), 0),
+                offset: Offset(-HomeView.data.size.width * 2 * (1 - value.page), 0),
                 child: Opacity(
                   opacity: math.max<double>(0, 4 * value.page - 3),
                   child: child,
@@ -119,7 +120,7 @@ class _StartCampBaseCampRow extends StatelessWidget {
           Consumer<PageOffsetNotifier>(
             builder: (_, PageOffsetNotifier value, Widget child) {
               return Transform.translate(
-                offset: Offset(MediaQuery.of(context).size.width * 2 * (1 - value.page), 0),
+                offset: Offset(HomeView.data.size.width * 2 * (1 - value.page), 0),
                 child: Opacity(
                   opacity: math.max<double>(0, 4 * value.page - 3),
                   child: child,
@@ -142,7 +143,7 @@ class _StartTimeEndTime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    final width = HomeView.data.size.width;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: width * .07),
@@ -152,7 +153,7 @@ class _StartTimeEndTime extends StatelessWidget {
           Consumer<PageOffsetNotifier>(
             builder: (_, PageOffsetNotifier value, Widget child) {
               return Transform.translate(
-                offset: Offset(-MediaQuery.of(context).size.width * 2 * (1 - value.page), 0),
+                offset: Offset(-HomeView.data.size.width * 2 * (1 - value.page), 0),
                 child: Opacity(
                   opacity: math.max<double>(0, 4 * value.page - 3),
                   child: child,
@@ -168,7 +169,7 @@ class _StartTimeEndTime extends StatelessWidget {
           Consumer<PageOffsetNotifier>(
             builder: (_, PageOffsetNotifier value, Widget child) {
               return Transform.translate(
-                offset: Offset(MediaQuery.of(context).size.width * 2 * (1 - value.page), 0),
+                offset: Offset(HomeView.data.size.width * 2 * (1 - value.page), 0),
                 child: Opacity(
                   opacity: math.max<double>(0, 4 * value.page - 3),
                   child: child,
