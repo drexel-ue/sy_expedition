@@ -128,7 +128,15 @@ class _StartTimeEndTime extends StatelessWidget {
             '02:40 pm',
             style: TextStyle(color: lightGrey),
           ),
-          SizedBox(width: width * .3),
+          SizedBox(
+            width: width * .3,
+            child: Center(
+              child: Text(
+                '72 km',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
           Text(
             '07:30 am',
             style: TextStyle(color: lightGrey),
