@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sy_expedition/arrow_icon.dart';
 import 'package:sy_expedition/leopard.dart';
 import 'package:sy_expedition/page_1.dart';
 import 'package:sy_expedition/page_indicator.dart';
@@ -52,6 +53,7 @@ class _HomeViewState extends State<HomeView> {
               SyAppBar(),
               ShareButton(),
               PageIndicator(),
+              ArrowIcon(),
             ],
           ),
         ),
