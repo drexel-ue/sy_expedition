@@ -1,23 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sy_expedition/asset_constants.dart';
-import 'package:sy_expedition/color_constants.dart';
-
-class PageOffsetNotifier with ChangeNotifier {
-  double _offset = 0;
-  double _page = 0;
-
-  PageOffsetNotifier(PageController pageController) {
-    pageController.addListener(() {
-      _offset = pageController.offset;
-      _page = pageController.page;
-      notifyListeners();
-    });
-  }
-
-  double get offset => _offset;
-  double get page => _page;
-}
+import 'package:sy_expedition/leopard.dart';
+import 'package:sy_expedition/page_offset_notifier.dart';
+import 'package:sy_expedition/sy_app_bar.dart';
+import 'package:sy_expedition/vulture.dart';
 
 class HomeView extends StatefulWidget {
   HomeView({Key key}) : super(key: key);
@@ -50,6 +36,8 @@ class _HomeViewState extends State<HomeView> {
           child: Stack(
             alignment: Alignment.centerLeft,
             children: [
+              Leopard(),
+              Vulture(),
               PageView(
                 controller: _pageController,
                 physics: const ClampingScrollPhysics(),
@@ -59,77 +47,8 @@ class _HomeViewState extends State<HomeView> {
                 ],
               ),
               SyAppBar(),
-              Leopard(),
-              Vulture(),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class Leopard extends StatelessWidget {
-  const Leopard({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<PageOffsetNotifier>(
-      builder: (BuildContext context, PageOffsetNotifier value, Widget child) {
-        return Positioned(
-          left: -value.offset * 0.815,
-          width: MediaQuery.of(context).size.width * 1.55,
-          child: child,
-        );
-      },
-      child: Image.asset(leopard),
-    );
-  }
-}
-
-class Vulture extends StatelessWidget {
-  const Vulture({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-
-    return Consumer<PageOffsetNotifier>(
-      builder: (BuildContext context, PageOffsetNotifier value, Widget child) {
-        return Positioned(
-          left: -value.offset + width * 1.35,
-          width: width * .3,
-          child: child,
-        );
-      },
-      child: Image.asset(vulture),
-    );
-  }
-}
-
-class SyAppBar extends StatelessWidget {
-  const SyAppBar({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
-
-    return Positioned(
-      top: 0,
-      child: Container(
-        width: width,
-        padding: EdgeInsets.symmetric(horizontal: width * .1, vertical: height * .03),
-        child: Row(
-          children: [
-            const Text(
-              'SY',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const Spacer(),
-            Icon(Icons.menu, color: white),
-          ],
         ),
       ),
     );
