@@ -8,7 +8,7 @@ class ShareButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final right = size.width * .1;
-    final bottom = size.height * .04;
+    final bottom = size.height * .01;
 
     return Positioned(
       bottom: bottom,

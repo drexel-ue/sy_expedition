@@ -11,7 +11,7 @@ class PageIndicator extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Positioned(
-      bottom: size.height * .04 + size.width * .025,
+      bottom: size.height * .01 + size.width * .025,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
