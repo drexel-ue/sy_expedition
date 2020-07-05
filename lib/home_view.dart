@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sy_expedition/color_constants.dart';
 import 'package:sy_expedition/leopard.dart';
 import 'package:sy_expedition/page_1.dart';
 import 'package:sy_expedition/page_offset_notifier.dart';
@@ -48,10 +49,28 @@ class _HomeViewState extends State<HomeView> {
               Leopard(),
               Vulture(),
               SyAppBar(),
+              _ShareButton(),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _ShareButton extends StatelessWidget {
+  const _ShareButton({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final right = size.width * .1;
+    final bottom = size.height * .04;
+
+    return Positioned(
+      bottom: bottom,
+      right: right,
+      child: Icon(Icons.share, color: white),
     );
   }
 }
