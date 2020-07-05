@@ -22,6 +22,8 @@ class Page2 extends StatelessWidget {
           _TravelDetails(),
           SizedBox(height: size.height * .05),
           _StartCampBaseCampRow(),
+          SizedBox(height: size.height * .025),
+          _StartTimeEndTime(),
         ],
       ),
     );
@@ -88,8 +90,10 @@ class _StartCampBaseCampRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * .07),
+      padding: EdgeInsets.symmetric(horizontal: width * .07),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -97,9 +101,37 @@ class _StartCampBaseCampRow extends StatelessWidget {
             'Start Camp',
             style: TextStyle(color: white),
           ),
+          SizedBox(width: width * .25),
           Text(
             'Base Camp',
             style: TextStyle(color: white),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _StartTimeEndTime extends StatelessWidget {
+  const _StartTimeEndTime({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: width * .07),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            '02:40 pm',
+            style: TextStyle(color: lightGrey),
+          ),
+          SizedBox(width: width * .3),
+          Text(
+            '07:30 am',
+            style: TextStyle(color: lightGrey),
           ),
         ],
       ),
