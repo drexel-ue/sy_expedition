@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sy_expedition/color_constants.dart';
 import 'package:sy_expedition/home_view.dart';
+import 'package:sy_expedition/map_button.dart';
 import 'package:sy_expedition/page_offset_notifier.dart';
 
 class Page2 extends StatelessWidget {
@@ -25,6 +26,9 @@ class Page2 extends StatelessWidget {
           _StartCampBaseCampRow(),
           SizedBox(height: size.height * .025),
           _StartTimeEndTime(),
+          Spacer(),
+          MapButton(),
+          SizedBox(height: size.height * .017),
         ],
       ),
     );
