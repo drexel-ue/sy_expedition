@@ -16,7 +16,9 @@ class Leopard extends StatelessWidget {
           child: child,
         );
       },
-      child: Image.asset(leopard),
+      child: IgnorePointer(
+        child: Image.asset(leopard),
+      ),
     );
   }
 }

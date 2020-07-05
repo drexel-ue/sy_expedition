@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sy_expedition/leopard.dart';
+import 'package:sy_expedition/page_1.dart';
 import 'package:sy_expedition/page_offset_notifier.dart';
 import 'package:sy_expedition/sy_app_bar.dart';
 import 'package:sy_expedition/vulture.dart';
@@ -36,16 +37,16 @@ class _HomeViewState extends State<HomeView> {
           child: Stack(
             alignment: Alignment.centerLeft,
             children: [
-              Leopard(),
-              Vulture(),
               PageView(
                 controller: _pageController,
                 physics: const ClampingScrollPhysics(),
                 children: const [
-                  Center(child: Text('1')),
+                  Page1(),
                   Center(child: Text('2')),
                 ],
               ),
+              Leopard(),
+              Vulture(),
               SyAppBar(),
             ],
           ),

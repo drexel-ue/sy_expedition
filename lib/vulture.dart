@@ -18,7 +18,9 @@ class Vulture extends StatelessWidget {
           child: child,
         );
       },
-      child: Image.asset(vulture),
+      child: IgnorePointer(
+        child: Image.asset(vulture),
+      ),
     );
   }
 }
