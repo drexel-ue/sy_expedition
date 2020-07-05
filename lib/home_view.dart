@@ -9,6 +9,7 @@ import 'package:sy_expedition/page_offset_notifier.dart';
 import 'package:sy_expedition/share_button.dart';
 import 'package:sy_expedition/sy_app_bar.dart';
 import 'package:sy_expedition/the_72_km.dart';
+import 'package:sy_expedition/travel_dots.dart';
 import 'package:sy_expedition/vulture.dart';
 
 class HomeView extends StatefulWidget {
@@ -65,6 +66,7 @@ class _HomeViewState extends State<HomeView> {
               PageIndicator(),
               ArrowIcon(),
               The72km(),
+              TravelDots(),
             ],
           ),
         ),
