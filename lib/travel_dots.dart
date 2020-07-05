@@ -18,43 +18,57 @@ class TravelDots extends StatelessWidget {
       child: Consumer<PageOffsetNotifier>(
         builder: (_, PageOffsetNotifier value, __) {
           return Opacity(
-            opacity: math.max<double>(0, 4 * value.page - 3),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            opacity: value.page,
+            child: Stack(
+              alignment: Alignment.center,
               children: [
-                Container(
+                SizedBox(
+                  width: width * .14,
                   height: width * .027,
-                  width: width * .027,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(999)),
-                    border: Border.all(color: white, width: 1.5),
+                ),
+                Positioned(
+                  left: 0 + (width * .017 + width * .015 + width * .017 + width * .017 / 2) - (width * .017 + width * .015 + width * .017 + width * .017 / 2) * value.page,
+                  child: Container(
+                    height: width * .027,
+                    width: width * .027,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(999)),
+                      border: Border.all(color: white, width: 1.5),
+                    ),
                   ),
                 ),
-                SizedBox(width: width * .017),
-                Container(
-                  height: width * .015,
-                  width: width * .015,
-                  decoration: BoxDecoration(
-                    color: white,
-                    borderRadius: BorderRadius.all(Radius.circular(999)),
+                Positioned(
+                  left: width * .017 + width * .027 + (width * .017 + width * .015 + width * .017 / 2) - (width * .017 + width * .015 + width * .017 / 2) * value.page,
+                  child: Container(
+                    height: width * .015,
+                    width: width * .015,
+                    decoration: BoxDecoration(
+                      color: white,
+                      borderRadius: BorderRadius.all(Radius.circular(999)),
+                    ),
                   ),
                 ),
-                SizedBox(width: width * .017),
-                Container(
-                  height: width * .015,
-                  width: width * .015,
-                  decoration: BoxDecoration(
-                    color: white,
-                    borderRadius: BorderRadius.all(Radius.circular(999)),
+                Positioned(
+                  right:
+                      (width * .017 + width * .027) * value.page + (width * .017 + width * .015 + width * .017 / 2) - (width * .017 + width * .015 + width * .017 / 2) * value.page,
+                  child: Container(
+                    height: width * .015,
+                    width: width * .015,
+                    decoration: BoxDecoration(
+                      color: white,
+                      borderRadius: BorderRadius.all(Radius.circular(999)),
+                    ),
                   ),
                 ),
-                SizedBox(width: width * .017),
-                Container(
-                  height: width * .027,
-                  width: width * .027,
-                  decoration: BoxDecoration(
-                    color: white,
-                    borderRadius: BorderRadius.all(Radius.circular(999)),
+                Positioned(
+                  right: 0 + (width * .017 + width * .015 + width * .017 + width * .017 / 2) - (width * .017 + width * .015 + width * .017 + width * .017 / 2) * value.page,
+                  child: Container(
+                    height: width * .027,
+                    width: width * .027,
+                    decoration: BoxDecoration(
+                      color: white,
+                      borderRadius: BorderRadius.all(Radius.circular(999)),
+                    ),
                   ),
                 ),
               ],
