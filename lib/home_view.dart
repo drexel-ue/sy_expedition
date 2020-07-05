@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sy_expedition/asset_constants.dart';
+import 'package:sy_expedition/color_constants.dart';
 
 class PageOffsetNotifier with ChangeNotifier {
   double _offset = 0;
@@ -45,20 +46,23 @@ class _HomeViewState extends State<HomeView> {
     return ChangeNotifierProvider<PageOffsetNotifier>(
       create: (_) => PageOffsetNotifier(_pageController),
       child: Scaffold(
-        body: Stack(
-          alignment: Alignment.center,
-          children: [
-            Leopard(),
-            Vulture(),
-            PageView(
-              controller: _pageController,
-              physics: const ClampingScrollPhysics(),
-              children: const [
-                Center(child: Text('1')),
-                Center(child: Text('2')),
-              ],
-            ),
-          ],
+        body: SafeArea(
+          child: Stack(
+            alignment: Alignment.centerLeft,
+            children: [
+              PageView(
+                controller: _pageController,
+                physics: const ClampingScrollPhysics(),
+                children: const [
+                  Center(child: Text('1')),
+                  Center(child: Text('2')),
+                ],
+              ),
+              SyAppBar(),
+              Leopard(),
+              Vulture(),
+            ],
+          ),
         ),
       ),
     );
@@ -99,6 +103,35 @@ class Vulture extends StatelessWidget {
         );
       },
       child: Image.asset(vulture),
+    );
+  }
+}
+
+class SyAppBar extends StatelessWidget {
+  const SyAppBar({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
+
+    return Positioned(
+      top: 0,
+      child: Container(
+        width: width,
+        padding: EdgeInsets.symmetric(horizontal: width * .1, vertical: height * .03),
+        child: Row(
+          children: [
+            const Text(
+              'SY',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const Spacer(),
+            Icon(Icons.menu, color: white),
+          ],
+        ),
+      ),
     );
   }
 }
