@@ -68,9 +68,12 @@ class _TravelDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<PageOffsetNotifier>(
       builder: (BuildContext context, PageOffsetNotifier value, Widget child) {
-        return Opacity(
-          opacity: math.max<double>(0, 4 * value.page - 3),
-          child: child,
+        return Transform.translate(
+          offset: Offset(MediaQuery.of(context).size.width * .8 * (1 - value.page), 0),
+          child: Opacity(
+            opacity: math.max<double>(0, 4 * value.page - 3),
+            child: child,
+          ),
         );
       },
       child: Text(
