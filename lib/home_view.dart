@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sy_expedition/color_constants.dart';
 import 'package:sy_expedition/leopard.dart';
 import 'package:sy_expedition/page_1.dart';
 import 'package:sy_expedition/page_indicator.dart';
