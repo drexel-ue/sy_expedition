@@ -100,14 +100,36 @@ class _StartCampBaseCampRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'Start Camp',
-            style: TextStyle(color: white),
+          Consumer<PageOffsetNotifier>(
+            builder: (_, PageOffsetNotifier value, Widget child) {
+              return Transform.translate(
+                offset: Offset(-MediaQuery.of(context).size.width * 2 * (1 - value.page), 0),
+                child: Opacity(
+                  opacity: math.max<double>(0, 4 * value.page - 3),
+                  child: child,
+                ),
+              );
+            },
+            child: Text(
+              'Start Camp',
+              style: TextStyle(color: white),
+            ),
           ),
           SizedBox(width: width * .25),
-          Text(
-            'Base Camp',
-            style: TextStyle(color: white),
+          Consumer<PageOffsetNotifier>(
+            builder: (_, PageOffsetNotifier value, Widget child) {
+              return Transform.translate(
+                offset: Offset(MediaQuery.of(context).size.width * 2 * (1 - value.page), 0),
+                child: Opacity(
+                  opacity: math.max<double>(0, 4 * value.page - 3),
+                  child: child,
+                ),
+              );
+            },
+            child: Text(
+              'Base Camp',
+              style: TextStyle(color: white),
+            ),
           ),
         ],
       ),
@@ -127,22 +149,36 @@ class _StartTimeEndTime extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            '02:40 pm',
-            style: TextStyle(color: lightGrey),
-          ),
-          SizedBox(
-            width: width * .3,
-            child: Center(
-              child: Text(
-                '72 km',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
+          Consumer<PageOffsetNotifier>(
+            builder: (_, PageOffsetNotifier value, Widget child) {
+              return Transform.translate(
+                offset: Offset(-MediaQuery.of(context).size.width * 2 * (1 - value.page), 0),
+                child: Opacity(
+                  opacity: math.max<double>(0, 4 * value.page - 3),
+                  child: child,
+                ),
+              );
+            },
+            child: Text(
+              '02:40 pm',
+              style: TextStyle(color: lightGrey),
             ),
           ),
-          Text(
-            '07:30 am',
-            style: TextStyle(color: lightGrey),
+          SizedBox(width: width * .3),
+          Consumer<PageOffsetNotifier>(
+            builder: (_, PageOffsetNotifier value, Widget child) {
+              return Transform.translate(
+                offset: Offset(MediaQuery.of(context).size.width * 2 * (1 - value.page), 0),
+                child: Opacity(
+                  opacity: math.max<double>(0, 4 * value.page - 3),
+                  child: child,
+                ),
+              );
+            },
+            child: Text(
+              '07:30 am',
+              style: TextStyle(color: lightGrey),
+            ),
           ),
         ],
       ),
