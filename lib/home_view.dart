@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sy_expedition/arrow_icon.dart';
 import 'package:sy_expedition/leopard.dart';
 import 'package:sy_expedition/page_1.dart';
+import 'package:sy_expedition/page_2.dart';
 import 'package:sy_expedition/page_indicator.dart';
 import 'package:sy_expedition/page_offset_notifier.dart';
 import 'package:sy_expedition/share_button.dart';
@@ -45,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
                 physics: const ClampingScrollPhysics(),
                 children: const [
                   Page1(),
-                  Center(child: Text('2')),
+                  Page2(),
                 ],
               ),
               Leopard(),
