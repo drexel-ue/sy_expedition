@@ -82,11 +82,12 @@ class _TravelDescription extends StatelessWidget {
               color: white,
             ),
           ),
-          SizedBox(height: height * .0255),
+          SizedBox(height: height * .015),
           Text(
-            'Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip.',
+            'The leopard is distinguished by its well-camoflaged fur, oppurtunistic hunting behavior, broad diet, and strength.',
             style: TextStyle(
               color: lighterGrey,
+              height: 2,
             ),
           ),
         ],
