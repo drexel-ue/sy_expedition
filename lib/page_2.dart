@@ -20,6 +20,8 @@ class Page2 extends StatelessWidget {
           _HolyGlow(),
           SizedBox(height: size.height * .21),
           _TravelDetails(),
+          SizedBox(height: size.height * .05),
+          _StartCampBaseCampRow(),
         ],
       ),
     );
@@ -76,6 +78,30 @@ class _TravelDetails extends StatelessWidget {
           fontSize: 18,
           color: white,
         ),
+      ),
+    );
+  }
+}
+
+class _StartCampBaseCampRow extends StatelessWidget {
+  const _StartCampBaseCampRow({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * .07),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            'Start Camp',
+            style: TextStyle(color: white),
+          ),
+          Text(
+            'Base Camp',
+            style: TextStyle(color: white),
+          ),
+        ],
       ),
     );
   }
